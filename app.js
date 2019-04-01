@@ -37,8 +37,8 @@ app.use('/api/user', userRouter);
 app.use('/api/product', productRouter);
 app.use('/api/image', imageRouter);
 
-app.listen(process.env.PORT || PORT, function () {
-  console.log(`listening on *:${PORT}`);
+app.listen(process.env.PORT || PORT, ()=> {
+  console.log(`listening on ${process.env.PORT}`);
 });
 
 module.exports = app;
