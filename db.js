@@ -8,6 +8,7 @@ const client = new Client({
     database: properties.get('dbname'),
     password: properties.get('password'),
     port: properties.get('port'),
+    ssl: true
 })
 
 client.connect(function (err) {
