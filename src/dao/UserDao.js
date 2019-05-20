@@ -75,7 +75,7 @@ module.exports.getById = function (id, callback) {
 };
 
 module.exports.getAll = function (callback) {
-    var sql = 'select * from "user" u Inner join "store" s on s.user_id = u.user_id where u.is_delete=false';
+    var sql = 'select * from "user" u left outer join "store" s on s.user_id = u.user_id where u.is_delete=false';
     client.query(sql).then(result => {
         callback(result.rows);
     }).catch(error => {
