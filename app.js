@@ -7,6 +7,8 @@ var logger = require('morgan');
 var userRouter = require('./src/routes/UserRouter');
 var productRouter = require('./src/routes/ProductRouter');
 var imageRouter = require('./src/routes/ImageRouter');
+var categoryRouter = require('./src/routes/categoryRouter');
+var storeRouter = require('./src/routes/storeRouter');
 
 var app = express();
 let PORT = 4000;
@@ -36,6 +38,12 @@ app.get('/', (req, resp) => {
 app.use('/api/user', userRouter);
 app.use('/api/product', productRouter);
 app.use('/api/image', imageRouter);
+app.use('/api/category', categoryRouter);
+app.use('/api/store', storeRouter);
+
+// app.listen(process.env.PORT || PORT, ()=> {
+//   console.log(`listening on ${PORT}`);
+// });
 
 app.listen(process.env.PORT || PORT, ()=> {
   console.log(`listening on ${process.env.PORT}`);
